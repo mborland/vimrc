@@ -45,6 +45,9 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Tagbar
 Plug 'majutsushi/tagbar'
 
+" Gitgutter
+Plug 'airblade/vim-gitgutter'
+
 " End vim plug
 call plug#end()
 
@@ -228,4 +231,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Git gutter settings 
+"
 
