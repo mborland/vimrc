@@ -8,9 +8,6 @@ endif
 " Init vim plug
 call plug#begin('~/.vim/plugged')
 
-" Fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
 " Intellisense
 " Requires nodejs to be installed
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -18,15 +15,6 @@ Plug 'clangd/coc-clangd'
 
 " Nerdtree
 Plug 'preservim/nerdtree'
-
-" git vim-fugitive
-Plug 'tpope/vim-fugitive'
-
-" Bracket auto pairing
-Plug 'jiangmiao/auto-pairs'
-
-" Icons for nerdtree
-"Plug 'ryanoasis/vim-devicons'
 
 " Status bar
 " Plug 'powerline/powerline'
@@ -48,56 +36,35 @@ Plug 'majutsushi/tagbar'
 " Gitgutter
 Plug 'airblade/vim-gitgutter'
 
+" Auto pairs (braces)
+Plug 'jiangmiao/auto-pairs'
+
+" Rainbow braces
+Plug 'luochen1990/rainbow'
+
 " End vim plug
 call plug#end()
 
 " Settings
-" Theme
 syntax on
 colorscheme sublimemonokai
 
 " Font
-set guifont=Hack\ 11
+"set guifont=Hack\ 11
 
-"set guifont
-
-" Line numbers
+" Line Numbers
 set number
 
-" Airline
+" Airline Theme
 set encoding=utf-8
 let g:airline_theme='wombat'
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
-   " let g:airline_symbols = {}
+   let g:airline_symbols = {}
 endif
 
-" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
-
-
-" airline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-
-" Colors
+" Color mode
 set t_Co=256
 
 " Nerdtree settings
@@ -233,6 +200,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Git gutter settings 
-"
-
+" Improve Highlighting
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
